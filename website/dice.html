@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Webprogrammeren - Mart Busger op Vollenbroek</title>
+  <link rel="stylesheet" type="text/css" href="styles/styles.css"/>
+  <script language='JavaScript'>
+    <!-- hide me
+    var my_array = new Array('Dice1', 'Dice2', 'Dice3', 'Dice4', 'Dice5', 'Dice6');
+    function swapImage (the_image_name)
+    {
+        var the_image = eval('window.document.' + the_image_name);
+        var the_index = Math.round(Math.random()*(my_array.length-1));
+        var the_new_image = "images/" + my_array[the_index] + '.png';
+        the_image.src = the_new_image;
+    }
+   // show me -->
+   </script>
+</head>
+
+<body>
+  Last Updated:
+  <script>
+    <!--//hide
+    document.write(document.lastModified);
+    //end hide-->
+  </script>
+  <h1>Webprogrammeren - Mart Busger op Vollenbroek</h1>
+  <div class='nav'>
+    <script language='JavaScript' src='scripts/menu.js'>
+    </script>
+  </div>
+  <div class="sectie">
+    <h2>Dobbelstenen</h2>
+    <p>Zes dobbelstenen die een random waarde krijgen als er met de muis overheen gegaan wordt.</p>
+      <a href='#' onMouseOver="swapImage('one');">
+      <img src='images/dice1.png' name='one' id='one' border=0></a>
+      <a href='#' onMouseOver="swapImage('two');">
+      <img src='images/dice2.png' name='two' id='two' border=0></a>
+      <a href='#' onMouseOver="swapImage('three');">
+      <img src='images/dice3.png' name='three' id='three' border=0></a>
+      <a href='#' onMouseOver="swapImage('four');">
+      <img src='images/dice4.png' name='four' id='four' border=0></a>
+      <a href='#' onMouseOver="swapImage('five');">
+      <img src='images/dice5.png' name='five' id='five' border=0></a>
+      <a href='#' onMouseOver="swapImage('six');">
+      <img src='images/dice6.png' name='six' id='six' border=0></a>
+
+
+</body>
+</html>
