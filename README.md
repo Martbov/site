@@ -1,2 +1,2 @@
-# webtech
-Webtechnologietest
+# Webprogrammeren
+Weekopdrachten en eindopdracht
