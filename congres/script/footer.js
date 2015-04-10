@@ -1,0 +1,10 @@
+document.write('<div id="footer">');
+document.write('<table>');
+document.write('<tr>');
+document.write('<td><a href="disclaimer.htm">Disclaimer</a></td>');
+document.write('<td><a href="linkList.htm">Linklist</a></td>');
+document.write('<td><a href="Onderhoudshandboek.pdf" target="_blank">Onderhoudshandboek</a></td>');
+document.write('</tr>');
+document.write('</table>');
+document.write('<copyright>&copy; Mart Busger op Vollenbroek</copyright>');
+document.write('</div>');
