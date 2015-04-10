@@ -4,7 +4,7 @@
  
  
 <?php
-$con = mysql_connect("mysql01.service.rug.nl","cis_id","password");
+$con = mysql_connect("mysql01.service.rug.nl","s2174634","Peizerweg21");
 if (!$con)
   {
   die('Could not connect: ' . mysql_error());
