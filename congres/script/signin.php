@@ -10,11 +10,11 @@ if (!$con)
   die('Could not connect: ' . mysql_error());
   }
  
-mysql_select_db("cis_id", $con);
+mysql_select_db("s2174634", $con);
  
-$sql="INSERT INTO congres_aanmeldingen (Voornaam, Achternaam, Adres, Huisnummer, Toevoeging, Emailadres, Telefoonnummer)
+$sql="INSERT INTO congres_aanmeldingen (Voornaam, Achternaam, Adres, Huisnummer, Toevoeging, Woonplaats, Emailadres, Telefoonnummer, Accommodatie)
 VALUES
-('$_POST[fname]','$_POST[lname]','$_POST[adress]','$_POST[housenumber]','$_POST[addition]','$_POST[email]','$_POST[phoneno]')";
+('$_POST[fname]','$_POST[lname]','$_POST[adress]','$_POST[housenumber]','$_POST[addition]','$_POST[city]','$_POST[email]','$_POST[phoneno]','$_POST[housing]')";
  
 if (!mysql_query($sql,$con))
   {
