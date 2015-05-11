@@ -1,35 +1,39 @@
-<!--Script van W3Scools-->
+<!--Originele script van http://stackoverflow.com/questions/15251095/display-data-from-sql-database-into-php-html-table-->
 
 <!DOCTYPE html>
 <html>
+<head>
+	<title>Smartwatch Congres Groningen</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="../stylesheets/congres.css"/>
 <body>
-
+<h1>Smartwatch Congres Deelnemers</h1>
+<div class="sectie">
 <?php
-$servername = "mysql01.service.rug.nl";
-$username = "s2174634"; 
-$password = "ierah3tei3";
-$dbname = "s2174634";
+$connection = mysql_connect('mysql01.service.rug.nl', 's2174634', 'ierah3tei3'); 
+mysql_select_db('s2174634');
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+$query = "SELECT Voornaam, Achternaam, Emailadres, Spreker FROM congres_aanmeldingen ORDER BY Achternaam ASC";
+$result = mysql_query($query);
 
-$sql = "SELECT fname, lname FROM congres_aanmeldingen";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "Voornaam: " . $row["fname"]. " Achternaam " . $row["lname"]. " ". "<br>";
-    }
-} else {
-    echo "0 results";
+echo "<table>"; // start a table tag in the HTML
+echo "<tr><td>" . "<b>Achternaam</b>" . "</td><td>" . "<b>Voornaam</b>" . "</td><td>" . "<b>Emailadres</b>" . "</td><td>" . "<b>Spreker</b>" . "</td></tr>";
+while($row = mysql_fetch_array($result)){   //Creates a loop to loop through results
+echo "<tr><td>" . $row['Achternaam'] . "</td><td>" . $row['Voornaam'] . "</td><td>" . $row['Emailadres'] . "</td><td>" . $row['Spreker'] . "</td></tr>";  
 }
-$conn->close();
-?>
 
+echo "</table>"; //Close the table in HTML
+
+
+
+mysql_close(); //Make sure to close out the database connection
+?>
+<a href="../signin.html">Terug
+
+</div>
+<div class="footer">
+	<script language='javascript' src='../script/footer.js'>
+	</script>
+</div>
 </body>
 </html>

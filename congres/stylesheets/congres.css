@@ -1,3 +1,9 @@
+/* Stylesheet voor eindopdracht Webprogrammeren
+	Mart Busger op Vollenbroek
+	S2174634
+	Rijksuniversiteit Groningen
+*/
+
 html {
 	background: url("../afbeeldingen/bg.jpg") no-repeat center center fixed; 
 	-webkit-background-size: cover;
@@ -10,9 +16,6 @@ body {
 	font-family: sans-serif;
 }
 
-p {
-	
-}
 h1 { 
 	font-size: 50px;
 	text-align: center;
@@ -20,6 +23,16 @@ h1 {
 
 h2 { 
 	text-align: center;
+}
+
+.logo img {
+	display: block;
+	width: 70%;
+	border: none;
+	padding: 0;
+	height: 50%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .sectie {
@@ -48,12 +61,13 @@ h2 {
 }
 
 .nav {
-	border: 1px solid #ccc;
-    border-width: 1px 0;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    background-color: rgba(255, 255, 255, 0.7);
+	width: 70%;
+	height: 90%;
+	margin: 1em auto;
+	padding: 5px;
+	background-color: rgba(255, 255, 255, 0.7);
+	border: 1px solid;
+	border-color: rgba(255,255,255,0.9);
     text-align: center;
 }
 
@@ -89,4 +103,13 @@ h2 {
 			   
 .footer table td:hover {
 	border-radius: 5px;
+}
+
+table, th, td {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+	width: 50%;
+	border-collapse: collapse;
 }

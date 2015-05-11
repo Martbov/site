@@ -2,7 +2,6 @@
 <html>
 <body>
  
- 
 <?php
 $con = mysql_connect("mysql01.service.rug.nl","s2174634","ierah3tei3");
 if (!$con)
@@ -12,9 +11,9 @@ if (!$con)
  
 mysql_select_db("s2174634", $con);
  
-$sql="INSERT INTO congres_aanmeldingen (Voornaam, Achternaam, Adres, Huisnummer, Toevoeging, Woonplaats, Emailadres, Telefoonnummer, Accommodatie)
+$sql="INSERT INTO congres_aanmeldingen (Voornaam, Achternaam, Adres, Huisnummer, Toevoeging, Woonplaats, Emailadres, Telefoonnummer, Accommodatie, Spreker)
 VALUES
-('$_POST[fname]','$_POST[lname]','$_POST[adress]','$_POST[housenumber]','$_POST[addition]','$_POST[city]','$_POST[email]','$_POST[phoneno]','$_POST[housing]')";
+('$_POST[fname]','$_POST[lname]','$_POST[adress]','$_POST[housenumber]','$_POST[addition]','$_POST[city]','$_POST[email]','$_POST[phoneno]','$_POST[housing]','$_POST[speaker]')";
  
 if (!mysql_query($sql,$con))
   {
