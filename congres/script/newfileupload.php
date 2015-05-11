@@ -8,36 +8,32 @@
 <h1>Smartwatch Congres Deelnemers</h1>
 <div class="sectie">
 <?php
-$target_dir = "uploads/";
+#test of alles wel werkt
+ 
+error_reporting(E_ALL); 
+ini_set('display_errors','1');
+ 
+#na het submit beginnen
+if (isset($_POST['submit'])){
+ 
+#directory voor bestanden
+$target_dir = "../uploads/";
 $target_file = $target_dir . basename($_FILES['fileToUpload']['name']);
-$uploadOk = 1;
-$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$fileType = pathinfo($target_file,PATHINFO_EXTENSION);
+$pdfDirectory = "uploads/";
+$filename = basename( $_FILES['fileToUpload']['name'], ".pdf");
+ 
+# zet bestand neer en laat zien
+	if(move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $pdfDirectory.$filename)) {
+	$pdfWithPath = $pdfDirectory.$filename;
+	echo "File has been uploaded";
+	echo "<p><a href=\"$pdfWithPath\">$filename</a></p>";
+	}
+}
+ 
 
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-// Check file size
-if ($_FILES['fileToUpload']['size'] > 500000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-// Allow certain file formats
-if($imageFileType != "pdf" ) {
-    echo "Sorry, only PDF files are allowed.";
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-    if (move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target_file)) {
-        echo "The file ". basename( $_FILES['fileToUpload']['name']). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
+if (file_exists($filename)) {
+	echo "$filename was last modified: " . date ("F d Y H:i:s.", filemtime($filename));
 }
 ?>
 <a href="../fileupload.html">Terug
