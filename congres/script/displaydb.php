@@ -6,6 +6,7 @@
 	<title>Smartwatch Congres Groningen</title>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../stylesheets/congres.css"/>
+</head>
 <body>
 <h1>Smartwatch Congres Deelnemers</h1>
 <div class="sectie">
